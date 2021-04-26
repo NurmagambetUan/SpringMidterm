@@ -49,8 +49,8 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
         httpSecurity.csrf().disable()
                 .authorizeRequests().antMatchers("/helloadmin").hasRole("ADMIN")
                 .antMatchers("/hellouser").hasAnyRole("ADMIN","USER")
-                .antMatchers("/authenticate", "/v2/api-docs", "/configuration/**", "/swagger-resources/**",
-                        "/swagger-ui.html", "/webjars/**", "/api-docs/**", "/register").permitAll().anyRequest().authenticated()
+                .antMatchers("/authenticate", "/v2/api-docs/**", "/configuration/**", "/swagger-resources/**",
+                        "/swagger-ui.html/**", "/webjars/**", "/api-docs/**", "/register").permitAll().anyRequest().authenticated()
                 .and().exceptionHandling()
                 .authenticationEntryPoint(unauthorizedHandler).and().
                 sessionManagement()

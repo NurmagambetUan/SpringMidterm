@@ -39,13 +39,13 @@ public class SpringFoxConfig {
 //                Collections.emptyList());
 //    }
 
-    @Bean
-    public Docket api() {
-        log.debug("Starting Swagger");
-        Contact contact = new Contact(
-                "Nazar Kabylov",
-                "https://justrocket.de",
-                "nazar.kabylov@gmail.com");
+//    @Bean
+//    public Docket api() {
+//        log.debug("Starting Swagger");
+//        Contact contact = new Contact(
+//                "Nazar Kabylov",
+//                "https://justrocket.de",
+//                "nazar.kabylov@gmail.com");
 
 //        List<VendorExtension> vext = new ArrayList<>();
 //        ApiInfo apiInfo = new ApiInfo(
@@ -73,10 +73,10 @@ public class SpringFoxConfig {
                 .securitySchemes(Lists.newArrayList(apiKey()))
                 .useDefaultResponseMessages(false);
 
-        docket = docket.select()
-                .paths(PathSelectors.regex(DEFAULT_INCLUDE_PATTERN))
-                .build();
-        return docket;
+//        docket = docket.select()
+//                .paths(PathSelectors.regex(DEFAULT_INCLUDE_PATTERN))
+//                .build();
+//        return docket;
 //        return new Docket(DocumentationType.SWAGGER_2)
 ////                .select()
 ////                .apis(RequestHandlerSelectors.any())
@@ -89,7 +89,7 @@ public class SpringFoxConfig {
 //                .apis(RequestHandlerSelectors.any())
 //                .paths(PathSelectors.any())
 //                .build();
-    }
+//    }
 
     private ApiKey apiKey() {
         return new ApiKey("JWT", AUTHORIZATION_HEADER, "header");
